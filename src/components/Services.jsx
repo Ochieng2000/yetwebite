@@ -143,7 +143,7 @@ function Services() {
                     <h3 className="text-xl lg:text-2xl font-bold text-text_color mb-1">
                       {category.title}
                     </h3>
-                    <p className="text-text_color/60 text-sm">
+                    <p className="text-text_color/60 text-base">
                       {category.services.length} Services
                     </p>
                   </div>
@@ -186,7 +186,7 @@ function Services() {
                         </div>
 
                         {/* Service Text */}
-                        <p className="text-text_color/80 text-sm leading-relaxed flex-1">
+                        <p className="text-text_color/80 text-base leading-relaxed flex-1">
                           {service.text}
                         </p>
                       </div>

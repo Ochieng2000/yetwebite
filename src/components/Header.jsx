@@ -80,7 +80,7 @@ function Header() {
               <a
                 key={index}
                 href={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${
+                className={`px-4 py-2 rounded-lg text-base font-semibold transition-all duration-300 ${
                   location.hash === link.href ||
                   (location.hash === "" && link.href === "#home")
                     ? "text-theme_color bg-theme_color/10"

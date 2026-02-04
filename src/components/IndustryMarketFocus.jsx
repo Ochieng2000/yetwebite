@@ -194,7 +194,7 @@ function IndustryMarketFocus() {
                     <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-theme_color transition-colors duration-300">
                       {market.title}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <p className="text-base text-gray-600 leading-relaxed">
                       {market.description}
                     </p>
                   </div>
@@ -236,7 +236,7 @@ function IndustryMarketFocus() {
                     </div>
                     
                     <div className="mb-4">
-                      <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-1">
+                      <p className="text-base font-semibold text-gray-500 uppercase tracking-wide mb-1">
                         {geo.title}
                       </p>
                       <h3 className="text-2xl font-bold text-gray-900 group-hover:text-theme_color transition-colors duration-300">
@@ -285,7 +285,7 @@ function IndustryMarketFocus() {
                         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-theme_color transition-colors duration-300">
                           {diff.title}
                         </h3>
-                        <p className="text-gray-400 leading-relaxed text-sm">
+                        <p className="text-gray-400 leading-relaxed text-base">
                           {diff.description}
                         </p>
                       </div>

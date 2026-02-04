@@ -80,7 +80,7 @@ function MessageFromCeo() {
                 <div className="mt-8 pt-6 border-t border-gray-200">
                   <p className="font-bold text-gray-900 text-lg">Mr. Peter Kibaki</p>
                   <p className="text-theme_color font-semibold">Chief Executive Officer</p>
-                  <p className="text-gray-500 text-sm mt-1">YET Kenya Limited</p>
+                  <p className="text-gray-500 text-base mt-1">YET Kenya Limited</p>
                 </div>
               </div>
 

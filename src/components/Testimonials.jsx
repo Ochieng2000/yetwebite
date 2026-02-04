@@ -117,7 +117,7 @@ function Testimonials() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-sm bg-white/5 border border-white/10 mb-4"
           >
             <Star className="w-4 h-4 text-theme_color" />
-            <span className="text-sm text-theme_color font-semibold uppercase tracking-wide">
+            <span className="text-base text-theme_color font-semibold uppercase tracking-wide">
               Client Testimonials
             </span>
           </div>
@@ -176,7 +176,7 @@ function Testimonials() {
                       <h4 className="font-bold text-white text-lg group-hover:text-theme_color transition-colors duration-300">
                         {testimony.name}
                       </h4>
-                      <p className="text-sm text-gray-400 font-medium">
+                      <p className="text-base text-gray-400 font-medium">
                         {testimony.position}
                       </p>
                       <p className="text-xs text-gray-500">

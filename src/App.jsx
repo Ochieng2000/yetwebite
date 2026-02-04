@@ -29,7 +29,7 @@ function App() {
       >
         <div className="relative flex items-center justify-center w-16 h-16 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 ease-in-out transform hover:scale-110 animate-pulse">
           <BsWhatsapp className="text-4xl" />
-          <span className="absolute hidden px-3 py-1 text-sm text-white bg-gray-800 rounded-lg -top-12 group-hover:block">
+          <span className="absolute hidden px-3 py-1 text-base text-white bg-gray-800 rounded-lg -top-12 group-hover:block">
             Chat with us on WhatsApp!
           </span>
         </div>

@@ -104,7 +104,7 @@ const Main = () => {
         >
           <ContactForm />
         </div>
-        <div className="w-full relative min-h-[20vh] bg-gray-900 text-white_color font-normal text-sm">
+        <div className="w-full relative min-h-[20vh] bg-gray-900 text-white_color font-normal text-base">
           <Footer />
         </div>
         <a

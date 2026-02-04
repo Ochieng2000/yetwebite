@@ -114,11 +114,11 @@ function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <FiMapPin className="w-5 h-5 text-theme_color flex-shrink-0 mt-1" />
-                <p className="text-sm">International House, Nairobi, Kenya</p>
+                <p className="text-base">International House, Nairobi, Kenya</p>
               </div>
               <div className="flex items-center gap-3">
                 <FiPhone className="w-5 h-5 text-theme_color flex-shrink-0" />
-                <a href="tel:+254796808883" className="text-sm hover:text-theme_color transition-colors">
+                <a href="tel:+254796808883" className="text-base hover:text-theme_color transition-colors">
                   +254 796 808 883
                 </a>
               </div>
@@ -126,7 +126,7 @@ function Footer() {
                 <FiMail className="w-5 h-5 text-theme_color flex-shrink-0" />
                 <a 
                   href="mailto:info@yet-kenya.com" 
-                  className="text-sm hover:text-theme_color transition-colors"
+                  className="text-base hover:text-theme_color transition-colors"
                 >
                   info@yet-kenya.com
                 </a>
@@ -198,7 +198,7 @@ function Footer() {
               <div className="w-1 h-6 bg-theme_color rounded-full"></div>
               Stay Connected
             </h3>
-            <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+            <p className="text-gray-400 mb-6 text-base leading-relaxed">
               Subscribe to our newsletter for the latest updates, insights, and technology trends.
             </p>
             <form onSubmit={handleSubscribe} className="space-y-3">
@@ -223,13 +223,13 @@ function Footer() {
 
             {/* Quick Links */}
             <div className="mt-8">
-              <h4 className="text-sm font-bold text-white mb-4">Quick Links</h4>
+              <h4 className="text-base font-bold text-white mb-4">Quick Links</h4>
               <div className="grid grid-cols-2 gap-2">
                 {quickLinks.map((link, index) => (
                   <a
                     key={index}
                     href={link.href}
-                    className="flex items-center gap-1 text-sm text-gray-400 hover:text-theme_color transition-colors"
+                    className="flex items-center gap-1 text-base text-gray-400 hover:text-theme_color transition-colors"
                   >
                     <FaAngleRight className="w-3 h-3 text-theme_color" />
                     {link.name}
@@ -243,7 +243,7 @@ function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400 text-center md:text-left">
+            <p className="text-base text-gray-400 text-center md:text-left">
               &copy; {new Date().getFullYear()} <span className="text-theme_color font-semibold">YET Kenya Limited</span>. All rights reserved.
             </p>
             
@@ -252,7 +252,7 @@ function Footer() {
                 <a
                   key={index}
                   href={link.href}
-                  className="text-sm text-gray-400 hover:text-theme_color transition-colors"
+                  className="text-base text-gray-400 hover:text-theme_color transition-colors"
                 >
                   {link.name}
                 </a>
@@ -262,7 +262,7 @@ function Footer() {
 
           {/* Tagline */}
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-500 italic">
+            <p className="text-base text-gray-500 italic">
               "Transforming visions into reality through innovation and excellence"
             </p>
           </div>

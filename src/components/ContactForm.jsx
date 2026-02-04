@@ -171,7 +171,7 @@ function ContactForm() {
 
               {/* Decorative Element */}
               <div className="mt-10 pt-8 border-t border-gray-800">
-                <p className="text-gray-400 text-sm text-center italic">
+                <p className="text-gray-400 text-base text-center italic">
                   "Transforming visions into reality through innovation and excellence"
                 </p>
               </div>
@@ -195,7 +195,7 @@ function ContactForm() {
                   <div className="space-y-2">
                     <label
                       htmlFor="name"
-                      className="text-sm font-semibold text-gray-700 block"
+                      className="text-base font-semibold text-gray-700 block"
                     >
                       Your Name *
                     </label>
@@ -214,7 +214,7 @@ function ContactForm() {
                   <div className="space-y-2">
                     <label
                       htmlFor="email"
-                      className="text-sm font-semibold text-gray-700 block"
+                      className="text-base font-semibold text-gray-700 block"
                     >
                       Your Email *
                     </label>
@@ -235,7 +235,7 @@ function ContactForm() {
                 <div className="space-y-2">
                   <label
                     htmlFor="subject"
-                    className="text-sm font-semibold text-gray-700 block"
+                    className="text-base font-semibold text-gray-700 block"
                   >
                     Subject *
                   </label>
@@ -255,7 +255,7 @@ function ContactForm() {
                 <div className="space-y-2">
                   <label
                     htmlFor="message"
-                    className="text-sm font-semibold text-gray-700 block"
+                    className="text-base font-semibold text-gray-700 block"
                   >
                     Your Message *
                   </label>

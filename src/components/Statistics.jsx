@@ -101,7 +101,7 @@ function Statistics() {
                       <h3 className="text-3xl font-bold text-theme_color mb-2">
                         {stat.number}
                       </h3>
-                      <p className="text-gray-200 font-semibold text-sm">
+                      <p className="text-gray-200 font-semibold text-base">
                         {stat.label}
                       </p>
                     </div>
