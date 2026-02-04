@@ -57,7 +57,7 @@ function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div
@@ -80,7 +80,7 @@ function Header() {
               <a
                 key={index}
                 href={link.href}
-                className={`px-4 py-2 rounded-lg text-base font-semibold transition-all duration-300 ${
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${
                   location.hash === link.href ||
                   (location.hash === "" && link.href === "#home")
                     ? "text-theme_color bg-theme_color/10"

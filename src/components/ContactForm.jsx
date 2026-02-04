@@ -1,12 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react";
 import { BiLogoWhatsappSquare } from "react-icons/bi";
-import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function ContactForm() {
-  const form = useRef();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     from_name: "",
@@ -22,41 +20,53 @@ function ContactForm() {
     });
   };
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .sendForm(
-        "service_bj5e5mi",
-        "template_f4priip",
-        form.current,
-        "cz2L5Ay7QKfR9Ic7A"
-      )
-      .then(
-        (result) => {
-          setLoading(false);
-          if (result.status === 200) {
-            setFormData({
-              from_name: "",
-              from_email: "",
-              from_subject: "",
-              message: ""
-            });
-            toast.success("Message sent successfully! We'll get back to you soon.", {
-              position: "top-right",
-              autoClose: 3000,
-            });
-          }
-        },
-        (error) => {
-          setLoading(false);
-          toast.error("Failed to send message. Please try again.", {
-            position: "top-right",
-            autoClose: 3000,
-          });
-        }
-      );
+    // Clean input values
+    const name = formData.from_name.trim();
+    const email = formData.from_email.trim();
+    const subject = formData.from_subject.trim();
+    const msg = formData.message.trim();
+
+    // Professional and readable WhatsApp message format
+    const whatsappMessage =
+      `*New Website Inquiry*\n\n` +
+      `👤 *Name:* ${name || "Not provided"}\n` +
+      `📧 *Email:* ${email || "Not provided"}\n` +
+      `📌 *Subject:* ${subject || "General Inquiry"}\n\n` +
+      `*Message:*\n${msg || "No message provided"}\n\n` +
+      `──────────────────────────────\n` +
+      `Sent from YET Kenya website • ${new Date().toDateString() + ', ' + new Date().toTimeString()}`;
+
+    // Your WhatsApp number (international format, no + or spaces)
+    const phoneNumber = "254796808883";
+
+    // Create WhatsApp URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // Small delay for better UX, then open WhatsApp
+    setTimeout(() => {
+      setLoading(false);
+
+      // Reset form
+      setFormData({
+        from_name: "",
+        from_email: "",
+        from_subject: "",
+        message: ""
+      });
+
+      // Open WhatsApp in new tab
+      window.open(whatsappUrl, "_blank");
+
+      toast.success("Message ready! Opening WhatsApp...", {
+        position: "top-right",
+        autoClose: 5000,
+      });
+    }, 800);
   };
 
   const contactInfo = [
@@ -131,7 +141,6 @@ function ContactForm() {
               <p className="text-gray-400 mb-8">
                 Reach out to us through any of these channels
               </p>
-
               <div className="space-y-6">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
@@ -147,7 +156,6 @@ function ContactForm() {
                   ) : (
                     <p className="text-gray-300">{info.content}</p>
                   );
-
                   return (
                     <div
                       key={index}
@@ -155,7 +163,9 @@ function ContactForm() {
                       data-aos-delay={index * 100}
                       className="group flex items-start gap-4"
                     >
-                      <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${info.gradient} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <div
+                        className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${info.gradient} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                      >
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       <div className="flex-1">
@@ -168,7 +178,6 @@ function ContactForm() {
                   );
                 })}
               </div>
-
               {/* Decorative Element */}
               <div className="mt-10 pt-8 border-t border-gray-800">
                 <p className="text-gray-400 text-base text-center italic">
@@ -188,8 +197,7 @@ function ContactForm() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Send Us a Message
               </h2>
-
-              <form ref={form} onSubmit={sendEmail} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name and Email Row */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -210,7 +218,6 @@ function ContactForm() {
                       placeholder="John Doe"
                     />
                   </div>
-
                   <div className="space-y-2">
                     <label
                       htmlFor="email"
@@ -275,17 +282,17 @@ function ContactForm() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="group w-full md:w-auto px-8 py-4 bg-theme_color rounded-full text-white font-semibold shadow-lg shadow-theme_color/30 hover:shadow-theme_color/50 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+                  className="group w-full md:w-auto px-8 py-4 bg-green-600 rounded-full text-white font-semibold shadow-lg shadow-green-600/30 hover:shadow-green-600/50 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
                 >
                   {loading ? (
                     <>
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      Sending...
+                      Preparing...
                     </>
                   ) : (
                     <>
-                      Send Message
-                      <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                      Send via WhatsApp
+                      <BiLogoWhatsappSquare className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     </>
                   )}
                 </button>
@@ -300,10 +307,8 @@ function ContactForm() {
           data-aos-delay="200"
           className="mt-16 bg-gradient-to-br from-theme_color to-blue-400 rounded-3xl p-8 md:p-12 shadow-2xl text-center relative overflow-hidden"
         >
-          {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-
           <div className="relative z-10">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Ready to Start Your Digital Transformation?
